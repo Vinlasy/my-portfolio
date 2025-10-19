@@ -1,0 +1,64 @@
+@use "../../styles/global" as *;
+
+.portfolio {
+    padding: 60px 0;
+    background-color: $color-bg-bastille;
+
+    &__title {
+        font-size: 32px;
+        font-weight: $ff-main-bold;
+        line-height: 36px;
+        color: $color-carib-green;
+        margin: 0 0 40px;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        // gap: 40px;
+    }
+
+    &__card {
+        display: flex;
+        gap: 20px;
+        padding: 20px 0;
+        border-top: 2px solid $color-carib-green;
+
+        &Inner {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        &Img {
+            width: 20%;
+        }
+
+        &Title {
+            font-size: 18px;
+            line-height: 20px;
+        }
+
+        &Text {
+            font-size: 16px;
+            line-height: 18px;
+        }
+
+        &List {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        &Item {
+            padding: 6px 10px;
+            font-size: 16px;
+            font-weight: $ff-main-medium;
+            line-height: 18px;
+            background-color: $color-carib-green;
+            color: $color-bg-black-ru;
+            border-radius: 6px;
+            box-shadow: 0 0 5px $color-shadow-white-05;
+        }
+    }
+}

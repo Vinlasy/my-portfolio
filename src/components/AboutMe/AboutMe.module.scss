@@ -1,0 +1,86 @@
+@use "../../styles/global" as *;
+
+.aboutMe {
+    padding: 60px 0;
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 0 20px;
+    }
+
+    &__inner {
+        width: 50%;
+    }
+
+    &__title {
+        font-size: 40px;
+        font-weight: $ff-main-bold;
+        line-height: 44px;
+    }
+
+    &__subTitle {
+        font-size: 32px;
+        font-weight: $ff-main-bold;
+        line-height: 36px;
+        color: $color-carib-green;
+        margin: 10px 0 0;
+    }
+
+    &__text {
+        font-size: 16px;
+        line-height: 18px;
+        margin: 20px 0 0;
+    }
+
+    &__otherInfo {
+        margin: 20px 0 0;
+
+        &Text {
+            font-size: 16px;
+            line-height: 18px;
+            color: $color-text-dark-gray;
+        }
+    }
+    
+    &__img {
+        position: relative;
+        width: 240px;
+        height: 240px;
+        background-color: #a8a7a7;
+        border-radius: 50%;
+        box-shadow: 0 0 6px 4px $color-carib-green;
+        margin-right: 8%;
+    }
+
+    &__social {
+        padding: 20px;
+        display: grid;
+        gap: 20px;
+        grid-auto-columns: 1fr;
+
+        &Item {
+            grid-row: 1 / 2;
+        }
+
+        &Link {
+            position: relative;
+            display: block;
+            font-size: 16px;
+            line-height: 18px;
+            text-align: center;
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: -16px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 60%;
+                height: 2px;
+                background-color: $color-carib-green;
+                box-shadow: 0 0 5px $color-shadow-white-05;
+            }
+        }
+    }
+}

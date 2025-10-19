@@ -1,0 +1,12 @@
+@use "../../styles/global" as *;
+
+.header {
+    background-color: $color-bg-bastille;
+    padding: 15px 0;
+
+    &__navList {
+        list-style-type: none;
+        display: flex;
+        gap: 15px;
+    }
+}

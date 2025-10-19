@@ -1,0 +1,59 @@
+@use "../../styles/global" as *;
+
+.skills {
+    padding: 0 0 60px;
+    
+    &__title {
+        font-size: 32px;
+        font-weight: $ff-main-bold;
+        line-height: 36px;
+        color: $color-carib-green;
+        margin: 0 0 20px;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        gap: 80px;
+    }
+
+    &__inner {
+        position: relative;
+        width: 60%;
+
+        &::before {
+            content: '';
+            position: absolute;
+            right: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 2px;
+            height: 80%;
+            background-color: $color-carib-green;
+            box-shadow: 0 0 5px $color-shadow-white-05;
+        }
+    }
+
+    &__text {
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    &__list {
+        width: 40%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    &__item {
+        padding: 6px 10px;
+        font-size: 16px;
+        font-weight: $ff-main-medium;
+        line-height: 18px;
+        background-color: $color-carib-green;
+        color: $color-bg-black-ru;
+        border-radius: 6px;
+        box-shadow: 0 0 5px $color-shadow-white-05;
+    }
+}

@@ -14,9 +14,13 @@ $color-hover-jade: #00b87c;                         // hover-состояние
 $color-text-white: #ffffff;                         // основной текст
 $color-text-dark-gray: #b0b0b0;                     // вторичный текст 
 $color-border-white-01: rgba(255, 255, 255, 0.1);   // рамки
-$color-shadow-white-05: rgba(255, 255, 255, 0.5);         // тени карточек\кнопок
+$color-shadow-black-05: rgba(0, 0, 0, 0.8);         // тени карточек\кнопок
 
 /* Breakpoints */
 /* ------------------------------------ */
 $vp-tablet: 1439px;
 $vp-mobile: 767px;
+
+/* Animation */
+/* ------------------------------------ */
+$transition-300: ease-in 0.3s;

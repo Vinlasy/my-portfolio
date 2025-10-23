@@ -22,9 +22,9 @@ export const Skills = () => {
                 <div className={styles.skills__wrapper}>
                     <div className={styles.skills__inner}>
                         <p className={styles.skills__text}>
-                            Изучение новых навыков Lorem ipsum dolor sit amet consectetur 
-                            adipisicing elit. Ad dignissimos temporibus consequuntur rerum 
-                            eum enim itaque voluptatum quo repellendus animi?
+                            Люблю учиться и погружаться в новые технологии. 
+                            Регулярно прокачиваю навыки и практикую их в личных проектах, 
+                            чтобы расти как разработчик и делать интерфейсы лучше.
                         </p>
                     </div>
                     <ul className={styles.skills__list}>

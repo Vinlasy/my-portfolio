@@ -15,23 +15,105 @@
     &__wrapper {
         display: flex;
         flex-direction: column;
-        // gap: 40px;
+        gap: 40px;
     }
 
     &__card {
+        position: relative;
         display: flex;
         gap: 20px;
-        padding: 20px 0;
-        border-top: 2px solid $color-carib-green;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 5%;
+            top: -20px;
+            transform: translateY(-50%);
+            width: 90%;
+            height: 2px;
+            background-color: $color-carib-green;
+            box-shadow: 0 0 5px $color-shadow-black-05;
+            transition: left $transition-300, width $transition-300;
+        }
+
+        &:last-child::after {
+            content: '';
+            position: absolute;
+            left: 5%;
+            bottom: -20px;
+            transform: translateY(-50%);
+            width: 90%;
+            height: 2px;
+            background-color: $color-carib-green;
+            box-shadow: 0 0 5px $color-shadow-black-05;
+        }
+
+        &Link {
+            position: relative;
+            transition: box-shadow $transition-300;
+
+            &SeeMore {
+                position: absolute;
+                left: 20px;
+                top: 30%;
+                z-index: 10;
+                opacity: 0;
+                color: $color-text-white;
+                display: flex;
+                transition: opacity 0.2s $transition-300;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 0;
+                    top: 50%;
+                    left: 0;
+                    box-shadow: 0 0 0px 0px $color-shadow-black-05;
+                    z-index: -1;
+                    transition: box-shadow 0.2s $transition-300;
+                }
+            }
+            
+            &:hover,
+            &:focus-visible {
+                outline: none;
+                .portfolio__cardLinkSeeMore {
+                    outline: none;
+                    opacity: 1;
+
+                    &::before {
+                        box-shadow: 0 0 15px 8px $color-shadow-black-05;
+                    }
+                }
+                .portfolio__cardImg {
+
+                    filter: blur(2px);
+                    box-shadow: 0 0 5px $color-hover-jade;
+                }
+            }
+        }
+
+        &Img {
+            width: 200px;
+            max-width: none;
+            border-radius: 8px;
+            box-shadow: 0 0 5px $color-shadow-black-05;
+            will-change: filter;
+            filter: blur(0px);
+            transition: transform $transition-300, filter $transition-300, box-shadow $transition-300;
+        }
 
         &Inner {
             display: flex;
             flex-direction: column;
             gap: 10px;
-        }
 
-        &Img {
-            width: 20%;
+            &Top {
+                display: flex;
+                gap: 8px;
+                align-items: center;
+            }
         }
 
         &Title {
@@ -42,6 +124,20 @@
         &Text {
             font-size: 16px;
             line-height: 18px;
+
+            &Link {
+                align-self: start;
+                padding: 0 0 2px;
+                border-bottom: 2px solid $color-text-white;
+                transition: color $transition-300, border-color $transition-300;
+
+                &:hover,
+                &:focus-visible {
+                    outline: none;
+                    color: $color-hover-jade;
+                    border-bottom-color: $color-hover-jade;
+                }
+            }
         }
 
         &List {
@@ -58,7 +154,18 @@
             background-color: $color-carib-green;
             color: $color-bg-black-ru;
             border-radius: 6px;
-            box-shadow: 0 0 5px $color-shadow-white-05;
+            box-shadow: 0 0 5px $color-shadow-black-05;
+        }
+
+        &:hover::before {
+            width: 100%;
+            left: 0;
+        }
+
+        &:hover {
+            .portfolio__cardImg {
+                transform: scale(1.07);
+            }
         }
     }
 }

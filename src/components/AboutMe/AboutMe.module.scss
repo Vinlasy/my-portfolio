@@ -10,10 +10,11 @@
     }
 
     &__inner {
-        width: 50%;
+        width: 60%;
     }
 
-    &__title {
+    &__title,
+    &__titleText {
         font-size: 40px;
         font-weight: $ff-main-bold;
         line-height: 44px;
@@ -32,43 +33,30 @@
         line-height: 18px;
         margin: 20px 0 0;
     }
-
-    &__otherInfo {
-        margin: 20px 0 0;
-
-        &Text {
-            font-size: 16px;
-            line-height: 18px;
-            color: $color-text-dark-gray;
-        }
-    }
     
     &__img {
         position: relative;
         width: 240px;
         height: 240px;
-        background-color: #a8a7a7;
         border-radius: 50%;
-        box-shadow: 0 0 6px 4px $color-carib-green;
-        margin-right: 8%;
+        box-shadow: 0 0 6px 2px $color-carib-green;
     }
 
     &__social {
         padding: 20px;
-        display: grid;
+        display: flex;
         gap: 20px;
-        grid-auto-columns: 1fr;
-
-        &Item {
-            grid-row: 1 / 2;
-        }
+        justify-content: space-around;
 
         &Link {
             position: relative;
-            display: block;
             font-size: 16px;
             line-height: 18px;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            outline: none;
 
             &::before {
                 content: '';
@@ -76,10 +64,19 @@
                 bottom: -16px;
                 left: 50%;
                 transform: translateX(-50%);
-                width: 60%;
+                width: 100%;
                 height: 2px;
                 background-color: $color-carib-green;
-                box-shadow: 0 0 5px $color-shadow-white-05;
+                box-shadow: 0 0 5px $color-shadow-black-05;
+                z-index: -1;
+                transition: box-shadow $transition-300, bottom $transition-300, height $transition-300;
+            }
+
+            &:hover::before,
+            &:focus-visible::before {
+                bottom: 12px;
+                box-shadow: 0 0 15px 10px $color-hover-jade;
+                height: 0;
             }
         }
     }

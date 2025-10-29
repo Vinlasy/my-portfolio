@@ -43,22 +43,27 @@ export const Portfolio = () => {
     ]
 
     return (
-        <section className={styles.portfolio}>
+        <section className={styles.portfolio} id="portfolio">
             <div className="container">
                 <h2 className={styles.portfolio__title}>Мои проекты</h2>
                 <div className={styles.portfolio__wrapper}>
                     {myProjects.map((item) => 
                         <div className={styles.portfolio__card} href={item.webLink}>
-                            <a className={styles.portfolio__cardLink} href={item.webLink} target="blank_">
+                            <a 
+                                className={styles.portfolio__cardLink} 
+                                href={item.webLink} 
+                                target="blank_"
+                                aria-label="Открыть страницу проекта"
+                            >
                                 <img className={styles.portfolio__cardImg} src={item.imgSrc} alt="Изображение проекта"/>
-                                <span className={styles.portfolio__cardLinkSeeMore}>
+                                <span className={styles.portfolio__cardLinkSeeMore} aria-hidden={true}>
                                     <span>Перейти на сайт</span>
-                                    <img src={arrowRightIcon} alt="Иконка стрелки" width={20} height={20} aria-hidden={false}/>
+                                    <img src={arrowRightIcon} alt="Иконка стрелки" width={20} height={20}/>
                                 </span>
                             </a>
                             <div className={styles.portfolio__cardInner}>
                                 <div className={styles.portfolio__cardInnerTop}>
-                                    <img src={squaresIcon} alt="Иконка квадрата" width={20} height={20} aria-hidden={false}/>
+                                    <img className={styles.portfolio__cardIcon} src={squaresIcon} alt="Иконка квадрата" width={20} height={20} aria-hidden={true}/>
                                     <h3 className={styles.portfolio__cardTitle}>{item.title}</h3>
                                 </div>
                                 <p className={styles.portfolio__cardText}>{item.text}</p>

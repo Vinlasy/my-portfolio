@@ -10,7 +10,7 @@ $ff-main-bold: 700;
 $color-bg-black-ru: #1e1e26;                        // основной фон
 $color-bg-bastille: #2a2a35;                        // фон для карточек, секций
 $color-carib-green: #00d18c;                        // акцентный зелёный кнопки\ссылки\иконки
-$color-hover-jade: #00b87c;                         // hover-состояние
+$color-hover-jade: #009b67;                         // hover-состояние
 $color-text-white: #ffffff;                         // основной текст
 $color-text-dark-gray: #b0b0b0;                     // вторичный текст 
 $color-border-white-01: rgba(255, 255, 255, 0.1);   // рамки
@@ -18,8 +18,10 @@ $color-shadow-black-05: rgba(0, 0, 0, 0.8);         // тени карточек
 
 /* Breakpoints */
 /* ------------------------------------ */
-$vp-tablet: 1439px;
-$vp-mobile: 767px;
+$vp-desctop-xs: 1023px;
+$vp-tablet: 767px;
+$vp-mobile: 579px;
+
 
 /* Animation */
 /* ------------------------------------ */

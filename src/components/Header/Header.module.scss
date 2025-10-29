@@ -19,6 +19,10 @@
             &:focus-visible {
                 color: $color-hover-jade;
             }
+
+            @include vp-767 {
+                font-size: 14px;
+            }
         }
     }
 }

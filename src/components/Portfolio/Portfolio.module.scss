@@ -4,12 +4,20 @@
     padding: 60px 0;
     background-color: $color-bg-bastille;
 
+    @include vp-767 {
+        padding: 40px 0;
+    }
+
     &__title {
         font-size: 32px;
         font-weight: $ff-main-bold;
-        line-height: 36px;
         color: $color-carib-green;
-        margin: 0 0 40px;
+        margin: 0 0 60px;
+
+        @include vp-767 {
+            font-size: 22px;
+            margin-bottom: 40px;
+        }
     }
 
     &__wrapper {
@@ -23,6 +31,10 @@
         display: flex;
         gap: 20px;
 
+        @include vp-579 {
+            flex-direction: column;
+        }
+
         &::before {
             content: '';
             position: absolute;
@@ -34,6 +46,11 @@
             background-color: $color-carib-green;
             box-shadow: 0 0 5px $color-shadow-black-05;
             transition: left $transition-300, width $transition-300;
+
+            @include vp-579 {
+                width: 100%;
+                left: 0;
+            }
         }
 
         &:last-child::after {
@@ -46,6 +63,11 @@
             height: 2px;
             background-color: $color-carib-green;
             box-shadow: 0 0 5px $color-shadow-black-05;
+
+            @include vp-579 {
+                width: 100%;
+                left: 0;
+            }
         }
 
         &Link {
@@ -55,12 +77,36 @@
             &SeeMore {
                 position: absolute;
                 left: 20px;
-                top: 30%;
+                top: 40px;
                 z-index: 10;
                 opacity: 0;
                 color: $color-text-white;
                 display: flex;
                 transition: opacity 0.2s $transition-300;
+
+                @include vp-767 {
+                    font-size: 14px;
+                    left: 5px;
+                    top: 20px;
+                }
+
+                @include vp-579 {
+                    top: unset;
+                    left: unset;
+                    bottom: 15px;
+                    right: 15px;
+                    opacity: 1;
+                    padding: 6px 10px;
+                    font-weight: $ff-main-medium;
+                    background-color: $color-carib-green;
+                    color: $color-bg-black-ru;
+                    border-radius: 6px;
+                    box-shadow: 0 0 5px $color-shadow-black-05;
+
+                    & img {
+                        display: none;
+                    }
+                }
 
                 &::before {
                     content: '';
@@ -84,10 +130,13 @@
 
                     &::before {
                         box-shadow: 0 0 15px 8px $color-shadow-black-05;
+
+                        @include vp-579 {
+                            box-shadow: none;
+                        }
                     }
                 }
                 .portfolio__cardImg {
-
                     filter: blur(2px);
                     box-shadow: 0 0 5px $color-hover-jade;
                 }
@@ -96,18 +145,37 @@
 
         &Img {
             width: 200px;
+            height: 100px;
             max-width: none;
             border-radius: 8px;
             box-shadow: 0 0 5px $color-shadow-black-05;
             will-change: filter;
             filter: blur(0px);
             transition: transform $transition-300, filter $transition-300, box-shadow $transition-300;
+
+            @include vp-767 {
+                width: 140px;
+                height: 80px;
+            }
+
+            @include vp-579 {
+                width: 100%;
+                height: 40%;
+            }
         }
 
         &Inner {
             display: flex;
             flex-direction: column;
             gap: 10px;
+
+            @include vp-767 {
+                gap: 8px;
+            }
+
+            @include vp-579 {
+                gap: 12px;
+            }
 
             &Top {
                 display: flex;
@@ -116,14 +184,24 @@
             }
         }
 
+        &Icon {
+            display: none;
+        }
+
         &Title {
             font-size: 18px;
-            line-height: 20px;
+
+            @include vp-767 {
+                font-size: 16px;
+            }
         }
 
         &Text {
             font-size: 16px;
-            line-height: 18px;
+
+            @include vp-767 {
+                font-size: 14px;
+            }
 
             &Link {
                 align-self: start;
@@ -137,6 +215,10 @@
                     color: $color-hover-jade;
                     border-bottom-color: $color-hover-jade;
                 }
+
+                @include vp-767 {
+                    font-size: 14px;
+                }
             }
         }
 
@@ -144,17 +226,25 @@
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
+
+            @include vp-767 {
+                gap: 8px;
+            }
         }
 
         &Item {
             padding: 6px 10px;
             font-size: 16px;
             font-weight: $ff-main-medium;
-            line-height: 18px;
             background-color: $color-carib-green;
             color: $color-bg-black-ru;
             border-radius: 6px;
             box-shadow: 0 0 5px $color-shadow-black-05;
+
+            @include vp-767 {
+                padding: 4px 8px;
+                font-size: 14px;
+            }
         }
 
         &:hover::before {
@@ -165,6 +255,10 @@
         &:hover {
             .portfolio__cardImg {
                 transform: scale(1.07);
+
+                @include vp-579 {
+                    transform: scale(1);
+                }
             }
         }
     }

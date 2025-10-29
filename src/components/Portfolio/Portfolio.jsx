@@ -1,7 +1,7 @@
 import "../../styles/style.scss";
 import styles from "./Portfolio.module.scss";
 
-import OptimaAiImg from "../../assets/images/OptimaAiSolution.png";
+import OptimaAiImg from "../../assets/images/OptimaAISolution.png";
 import TruyevPark from "../../assets/images/TruyevPark.png";
 import SkillBoxProject from "../../assets/images/SkillBoxProject.png";
 import CESPnz from "../../assets/images/CESPnz.png";

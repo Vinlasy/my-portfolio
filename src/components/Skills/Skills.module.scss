@@ -27,11 +27,25 @@
         @include vp-767 {
             gap: 40px;
         }
+
+        @include vp-579 {
+            flex-direction: column;
+            gap: 20px;
+        }
     }
 
-    &__inner {
+    &__text {
         position: relative;
         width: 60%;
+        font-size: 16px;
+
+        @include vp-767 {
+            font-size: 14px;
+        }
+
+        @include vp-579 {
+            width: 100%;
+        }
 
         &::before {
             content: '';
@@ -47,14 +61,10 @@
             @include vp-767 {
                 right: -20px;
             }
-        }
-    }
 
-    &__text {
-        font-size: 16px;
-
-        @include vp-767 {
-            font-size: 14px;
+            @include vp-579 {
+                display: none;
+            }
         }
     }
 
@@ -66,6 +76,10 @@
 
         @include vp-767 {
             gap: 8px;
+        }
+
+        @include vp-579 {
+            width: 100%;
         }
     }
 

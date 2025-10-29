@@ -32,6 +32,7 @@ export const Header = () => {
                             )}
                         </ul>
                     </nav>
+                    <a className={styles.header__btn} href="https://github.com/Vinlasy/my-portfolio.git" target="blank_">Репозиторий на GitHub</a>
                 </div>
             </div>
         </header>

@@ -20,13 +20,11 @@ export const Skills = () => {
             <div className="container">
                 <h2 className={styles.skills__title}>Мои навыки</h2>
                 <div className={styles.skills__wrapper}>
-                    <div className={styles.skills__inner}>
-                        <p className={styles.skills__text}>
-                            Люблю учиться и погружаться в новые технологии. 
-                            Регулярно прокачиваю навыки и практикую их в личных проектах, 
-                            чтобы расти как разработчик и делать интерфейсы лучше.
-                        </p>
-                    </div>
+                    <p className={styles.skills__text}>
+                        Люблю учиться и погружаться в новые технологии. 
+                        Регулярно прокачиваю навыки и практикую их в личных проектах, 
+                        чтобы расти как разработчик и делать интерфейсы лучше.
+                    </p>
                     <ul className={styles.skills__list}>
                         {mySkills.map((item) =>
                             <li className={styles.skills__item}>{item}</li>

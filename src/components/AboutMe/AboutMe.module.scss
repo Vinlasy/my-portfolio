@@ -116,43 +116,33 @@
             align-items: center;
             gap: 8px;
             outline: none;
-            
+            z-index: 10;
 
             @include vp-767 {
                 gap: 6px;
                 font-size: 14px;
             }
 
-            //! Скорее всего убрать
-
             &::before {
-                display: none;
                 content: '';
                 position: absolute;
-                bottom: -16px;
-                left: 50%;
-                transform: translateX(-50%);
+                bottom: 50%;
+                right: 0;
+                transform: translateY(-50%);
                 width: 100%;
-                height: 2px;
-                background-color: $color-carib-green;
+                height: 0;
                 box-shadow: 0 0 5px $color-shadow-black-05;
                 z-index: -1;
-                transition: box-shadow $transition-300, bottom $transition-300, height $transition-300;
-
-                @include vp-767 {
-                    bottom: -8px;
-                }
+                transition: box-shadow $transition-300;
 
                 @include vp-579 {
-                    display: none;
+                    width: 80%;
                 }
             }
 
             &:hover::before,
             &:focus-visible::before {
-                bottom: 12px;
                 box-shadow: 0 0 15px 6px $color-hover-jade;
-                height: 0;
             }
         }
 

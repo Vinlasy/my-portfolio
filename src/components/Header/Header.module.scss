@@ -8,6 +8,50 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @include vp-579 {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__burger {
+        display: none;
+        border: none;
+        background-color: transparent;
+        outline: none;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+
+        & span {
+            width: 100%;
+            height: 3px;
+            background-color: $color-carib-green;
+            
+            transition: opacity $transition-300, transform $transition-300;
+        }
+
+        @include vp-579 {
+            width: 30px;
+            height: 21px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        &--active {
+            @include vp-579 {
+                & span:nth-child(1) {
+                    transform: translateY(9px) rotate(45deg);
+                }
+                & span:nth-child(2) {
+                    opacity: 0;
+                }
+                & span:nth-child(3) {
+                    transform: translateY(-9px) rotate(-45deg);
+                }
+            }
+        }
     }
 
     &__nav {
@@ -15,10 +59,50 @@
             list-style-type: none;
             display: flex;
             gap: 15px;
+
+            @include vp-579 {
+                position: absolute;
+                left: 0;
+                top: 66px;
+                flex-direction: column;
+                text-align: center;
+                background-color: $color-bg-bastille;
+                box-shadow: 0 10px 6px $color-shadow-black-05;
+                border-radius: 0 0 12px 12px;
+                width: 100%;
+                z-index: 10;
+
+                opacity: 0;
+                height: 0px;
+                padding: 0px;
+                gap: 0px;
+                transition: opacity $transition-300, height $transition-300, padding $transition-300, gap $transition-300;
+            }
+
+            &--active {
+                @include vp-579 {
+                    opacity: 1;
+                    height: 176px;
+                    padding: 20px;
+                    gap: 20px;
+
+                    .header__navItem {
+                        height: 2em;
+                    }
+                }
+            }
+        }
+
+        &Item {
+            transition: height $transition-300;
+            @include vp-579 {
+                height: 0px;
+                overflow: hidden;
+            }
         }
 
         &Link {
-            transition: color $transition-300;
+            transition: color $transition-300, opacity $transition-300;
             outline: none;
 
             &:hover,
@@ -29,10 +113,21 @@
             @include vp-767 {
                 font-size: 14px;
             }
+
+            @include vp-579 {
+                height: 100%;
+                font-size: 16px;
+                display: block;
+                padding: 6px 0;
+            }
         }
     }
 
     &__btn {
+        outline: none;
+        display: flex;
+        align-items: center;
+        gap: 0px;
         padding: 8px 10px;
         font-size: 16px;
         font-weight: $ff-main-medium;
@@ -40,15 +135,39 @@
         color: $color-bg-black-ru;
         border-radius: 6px;
         box-shadow: 0 0 5px $color-shadow-black-05;
-        transition: background-color $transition-300;
+        transition: background-color $transition-300, gap $transition-300;
 
-        &:hover {
-            background-color: $color-hover-jade;
+        &:hover,
+        &:focus-visible {
+            gap: 8px;
+
+            .header__btnText {
+                width: 107px;
+
+                @include vp-579 {
+                    width: 93px;
+                }
+            }
+
+            @media(max-width: 430px) {
+                gap: 0px;
+                background-color: $color-hover-jade;
+
+                .header__btnText {
+                    width: 0px;
+                }
+            }
         }
 
         @include vp-767 {
             padding: 6px 8px;
             font-size: 14px;
+        }
+        
+        &Text {
+            transition: width $transition-300;
+            overflow: hidden;
+            width: 0px;
         }
     }
 }
